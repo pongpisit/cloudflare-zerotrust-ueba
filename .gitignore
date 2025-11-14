@@ -1,3 +1,6 @@
+# Publication script (local use only)
+publish.sh
+
 # Wrangler
 .wrangler/
 worker/
