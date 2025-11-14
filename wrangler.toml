@@ -1,0 +1,33 @@
+name = "user-risk-zerotrust"
+main = "user-risk-demo.js"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Cron trigger - runs every hour to update user risk lists
+[triggers]
+crons = ["* * * * *"]
+
+# KV namespace for metrics and logging
+# Create with: wrangler kv:namespace create USER_RISK_KV
+# Then update the IDs below
+[[kv_namespaces]]
+binding = "USER_RISK_KV"
+id = "your-production-kv-namespace-id"
+preview_id = "your-preview-kv-namespace-id"
+
+# Environment variables (set these via wrangler secret put)
+[vars]
+# CLOUDFLARE_ACCOUNT_ID = "your-account-id"      # Set via wrangler secret
+# CLOUDFLARE_API_TOKEN = "your-api-token"        # Set via wrangler secret
+# Optional: Override default Gateway List IDs
+# HIGH_RISK_LIST_ID = "your-high-risk-list-id"
+# MEDIUM_RISK_LIST_ID = "your-medium-risk-list-id"
+# LOW_RISK_LIST_ID = "your-low-risk-list-id"
+
+# Worker settings
+[build]
+command = ""
+
+# Limits and configuration
+[limits]
+cpu_ms = 30000  # 30 seconds max execution time
