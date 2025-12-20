@@ -174,6 +174,7 @@ Data exfiltration prevented
 2. **API Token** with permissions:
    - Account.Zero Trust: PII - Read
    - Account.Zero Trust - Edit
+   - Account.Zero Trust Resilience - Read
 3. **Gateway Lists** (can be created via the worker)
 4. **Wrangler CLI** installed: `npm install -g wrangler`
 
@@ -252,7 +253,7 @@ wrangler deploy
 | Variable | Required | Description |
 |----------|----------|-------------|
 | `CLOUDFLARE_ACCOUNT_ID` | Yes | Your Cloudflare Account ID |
-| `CLOUDFLARE_API_TOKEN` | Yes | API token with Account.Zero Trust: PII Read and Account.Zero Trust Edit permissions |
+| `CLOUDFLARE_API_TOKEN` | Yes | API token with Account.Zero Trust: PII Read and Account.Zero Trust Edit and Account.Zero Trust Resilience Read permissions |
 | `HIGH_RISK_LIST_ID` | No | Gateway list ID for high risk users (auto-created if not set) |
 | `MEDIUM_RISK_LIST_ID` | No | Gateway list ID for medium risk users (auto-created if not set) |
 | `LOW_RISK_LIST_ID` | No | Gateway list ID for low risk users (auto-created if not set) |
